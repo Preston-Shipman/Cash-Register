@@ -1,4 +1,15 @@
 function checkCashRegister(price, cash, cid) {
+  if (price >= cash) {
+    if (price <= cid) {
+      return {status: "CLOSED", change: [...cid]}
+    }
+    else if (price >= cid) {
+      return {status: "OPEN", change: [...]}
+    }
+  }
+  else if (price >= cid) {
+    return {status: "INSUFFICIENT_FUNDS", change: []}
+  }
   var change;
   return change;
 }
